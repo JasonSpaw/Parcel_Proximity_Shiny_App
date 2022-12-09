@@ -1,11 +1,11 @@
-install.packages('rgdal')
-install.packages('leaflet')
-install.packages('RColorBrewer')
-install.packages('shinythemes')
-install.packages('sp')
-install.packages('maps')
-install.packages('mapproj')
-install.packages('mapdata')
+#install.packages('rgdal')
+#install.packages('leaflet')
+#install.packages('RColorBrewer')
+#install.packages('shinythemes')
+#install.packages('sp')
+#install.packages('maps')
+#install.packages('mapproj')
+#install.packages('mapdata')
 
 ## Load relevant R packages.
 inLibraries = list('rgdal','leaflet', 'maptools', 'RColorBrewer',
@@ -21,7 +21,10 @@ for (rpack in inLibraries) {
   }
 }
 
-mid_parcel <- readRDS ("data/mid_parcel_combined_rds2")
+mid_1 <- readRDS ("data/mid_parcel_rds1")
+mid_2 <- readRDS ("data/mid_parcel_rds2")
+
+mid_parcel <- rbind(mid_1,mid_2)
 
 locations <- c("Non-Categorized Parcels" = "none",
                "General sales or services" = "General sales or services", 
