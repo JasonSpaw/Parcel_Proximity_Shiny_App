@@ -1,6 +1,6 @@
 # Parcel Proximity Shiny App
 
-This was a shiny visual I did as  contribution to my group's capstone project.
+This was a shiny visual I did as  contribution to my group's capstone project, during my studies.
 
 - The app is an interactive leaflet map of Midland, Texas, showing only parcels that are within a distance set by the user from selected parcel types, which is also set by the user.  
 - Ideally one would upload the app to shiny.io and provide the link for others to use, but I'm cheap and not paying to have it available on the server.  So for those who wish to view the app, follow the instructions below:
