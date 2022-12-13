@@ -1,25 +1,25 @@
-#install.packages('rgdal')
-#install.packages('leaflet')
-#install.packages('RColorBrewer')
-#install.packages('shinythemes')
-#install.packages('sp')
-#install.packages('maps')
-#install.packages('mapproj')
-#install.packages('mapdata')
+# Install required packages
+install.packages('rgdal', repos = "http://cran.us.r-project.org")
+install.packages('leaflet', repos = "http://cran.us.r-project.org")
+install.packages('RColorBrewer', repos = "http://cran.us.r-project.org")
+install.packages('shiny', repos = "http://cran.us.r-project.org")
+install.packages('shinythemes', repos = "http://cran.us.r-project.org")
+install.packages('sp', repos = "http://cran.us.r-project.org")
+install.packages('maps', repos = "http://cran.us.r-project.org")
+install.packages('mapproj', repos = "http://cran.us.r-project.org")
+install.packages('mapdata', repos = "http://cran.us.r-project.org")
 
 ## Load relevant R packages.
-inLibraries = list('rgdal','leaflet', 'maptools', 'RColorBrewer',
-                   'sp', 'maps', 'mapproj', 'mapdata',  'shiny', 'shinythemes')
-
-for (rpack in inLibraries) {
-  if (is.element(rpack,installed.packages()[,1])){
-    #Load the library into R
-    suppressMessages(library(rpack,character.only = TRUE))
-  }
-  else {
-    print(paste("Warning:  ",rpack," is not an installed package"))
-  }
-}
+library('rgdal')
+library('leaflet')
+library('maptools')
+library('shiny')
+library('RColorBrewer')
+library('shinythemes')
+library('sp')
+library('maps')
+library('mapproj')
+library('mapdata')
 
 mid_1 <- readRDS ("data/mid_parcel_rds1")
 mid_2 <- readRDS ("data/mid_parcel_rds2")
@@ -85,6 +85,8 @@ Spawta_ui <- fluidPage(
                )
              )
     )))
+
+
 plot_server <- function(input, output, session){ 
   
   output$map <- renderLeaflet ({   
